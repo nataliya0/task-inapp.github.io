@@ -384,6 +384,7 @@ a.close:hover {
 .links {
   text-align: center;
   margin-top: 24px;
+  margin-bottom: 40px;
 }
 .links a {
   font-family: "Roboto", sans-serif;
@@ -437,3 +438,4 @@ a.close:hover {
 .radio-subscription:checked + .custom-radio::before {
   display: block;
 }
+
