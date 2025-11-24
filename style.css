@@ -1,0 +1,439 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+input[type="file"] {
+  max-width: 100%;
+}
+
+:root {
+  --title-color: #4595dd;
+  --descr-color: #899cad;
+}
+@font-face {
+  font-family: "Oclosale";
+  src: url("fonts/Octosale.woff2") format("woff2"),
+    url("fonts/OCTOSALE.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.woff2") format("woff2"),
+    url("fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-SemiBold.woff2") format("woff2"),
+    url("fonts/Roboto-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #deeffe;
+}
+.container {
+  max-width: 390px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0 20px;
+}
+.section.top {
+  background: linear-gradient(#e8f3ff, #fbfdff);
+  border-radius: 0 0 20px 20px;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a.close {
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.logo {
+  height: 24px;
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.logo:hover,
+a.close:hover {
+  opacity: 0.85;
+}
+.main-title {
+  font-family: "Oclosale", sans-serif;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--title-color);
+  margin-top: 30px;
+  max-width: 170px;
+}
+.image.main {
+  width: 200px;
+  height: 175px;
+  background-image: url("src/top.png");
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  right: -10px;
+  bottom: -10px;
+  z-index: 10;
+}
+.bg-blur {
+  width: 164px;
+  height: 164px;
+  background: #82c4ff;
+  border-radius: 50%;
+  filter: blur(100px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.card {
+  display: flex;
+  padding: 8px 12px;
+  background-color: #fbfdff;
+  border-radius: 12px;
+  align-items: center;
+}
+.card:first-child {
+  flex: 0 0 100%;
+}
+
+.card:not(:first-child) {
+  flex: 0 0 calc(50% - 4px);
+}
+.card-title {
+  font-family: "Oclosale", sans-serif;
+  font-size: 14px;
+  line-height: 125%;
+  color: var(--title-color);
+  margin-left: 8px;
+}
+.section.subscriptions {
+  margin-top: 40px;
+}
+.subscription {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.subscription:hover {
+  opacity: 0.85;
+}
+
+.subscription.monthly::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("src/green-star-bg.png");
+  background-color: #87db5e;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  border-radius: 12px;
+}
+.subscription.yearly {
+  margin-top: 8px;
+}
+.subscription.yearly::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("src/violet-star-bg.png");
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  border-radius: 12px;
+  background-color: #9094fb;
+  z-index: -1;
+}
+.subscription-content {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  margin-left: 12px;
+}
+.subscription-title {
+  font-family: "Oclosale", sans-serif;
+  font-size: 16px;
+  line-height: 125%;
+  padding-bottom: 4px;
+}
+.price-content {
+  opacity: 0.85;
+  font-family: "Roboto", sans-serif;
+}
+.price {
+  font-size: 16px;
+  line-height: 125%;
+  font-weight: 600;
+}
+.old-price {
+  text-decoration: line-through;
+}
+.price-description {
+  font-size: 10px;
+}
+.period {
+  font-size: 12px;
+}
+.price-content .price,
+.price-content .period {
+  display: inline-block;
+}
+.image {
+  position: absolute;
+}
+.image.monthly {
+  width: 95px;
+  height: 105px;
+  background-image: url("src/monthly.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  right: 25px;
+  bottom: 0;
+}
+.image.yearly {
+  width: 126px;
+  height: 98px;
+  background-image: url("src/yearly.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  right: 10px;
+  bottom: 0;
+}
+
+.sale {
+  width: 63px;
+  height: 63px;
+  background-image: url("src/sale.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 38px;
+  right: -10px;
+  rotate: 8deg;
+  filter: drop-shadow(0 0 25px #9094fb);
+}
+.sign {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 125%;
+  color: var(--descr-color);
+  padding-top: 8px;
+  text-align: center;
+}
+.btn-content {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 24px;
+}
+.btn {
+  background-color: #ffa21a;
+  color: #ffffff;
+  font-family: "Oclosale", sans-serif;
+  font-size: 18px;
+  line-height: 125%;
+  border-radius: 80px;
+  padding: 16px 32px;
+  display: inline-block;
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.btn:hover {
+  background-color: #ffb548;
+}
+.links {
+  text-align: center;
+  margin-top: 24px;
+}
+.links a {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 125%;
+  text-decoration: underline;
+  color: var(--descr-color);
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.links a:hover {
+  opacity: 0.8;
+}
+.links a:not(:first-child) {
+  margin-left: 16px;
+}
+.radio-subscription {
+  display: none;
+}
+.custom-radio {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  vertical-align: text-top;
+}
+.custom-radio::before {
+  content: "";
+  position: absolute;
+  display: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+}
+.custom-radio.monthly::before {
+  background-image: url("src/check.svg");
+}
+.custom-radio.yearly::before {
+  background-image: url("src/check-violet.svg");
+}
+.radio-subscription:checked + .custom-radio::before {
+  display: block;
+}
